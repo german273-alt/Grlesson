@@ -1,0 +1,843 @@
+<!DOCTYPE html>  <html lang="de">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Deutsch lernen durch Dialoge</title>    <style>  
+    * {  
+      box-sizing: border-box;  
+    }  
+  
+    html, body {  
+      margin: 0;  
+      padding: 0;  
+      min-height: 100%;  
+    }  
+  
+    body {  
+      font-family: Arial, sans-serif;  
+  
+      background-image: url("image/lars.jpg");  
+      background-size: cover;  
+      background-position: center top;  
+      background-repeat: no-repeat;  
+      background-attachment: fixed;  
+  
+      color: #222;  
+    }  
+  
+    .page {  
+      width: 100%;  
+      min-height: 100vh;  
+      padding: 30px 15px;  
+    }  
+  
+    .content {  
+      max-width: 900px;  
+      margin: auto;  
+      padding: 25px;  
+      border-radius: 20px;  
+  
+      /* شفافية بسيطة عشان الصورة تبان */  
+      background: rgba(255, 255, 255, 0.70);  
+    }  
+  </style>  </head>  <body>    <div class="page">  <div class="content">  
+
+  <h1>Deutsch lernen durch Dialoge</h1>  
+
+  <p>  
+    Lerne Deutsch mit realistischen Dialogen und Alltagssituationen.  
+  </p>  
+<div class="audio-box">
+  <audio controls>
+    <source src="audio/lars_0.mp3" type="audio/mpeg">
+  </audio>
+</div>
+<style>.dialogue {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sentence {
+  padding: 15px 18px;
+  border-radius: 15px;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.Mama {
+  background: rgba(255, 235, 205, 0.90);
+  border-left: 5px solid #c98b4b;
+}
+
+.tochter {
+  background: rgba(220, 235, 255, 0.90);
+  border-left: 5px solid #5b8fd1;
+}
+
+.speaker {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.vocab-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 20px 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.vocab-card:active {
+  transform: scale(0.96);
+}
+
+.german-word {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.english-meaning {
+  margin-top: 8px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+  font-size: 14px;
+  font-weight: 300;
+  color: #555;
+}
+.quiz-section {
+  margin-top: 35px;
+}
+
+.quiz-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #222;
+}
+
+.quiz-box {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.quiz-question {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.quiz-option {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 13px 15px;
+  margin: 9px 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.quiz-option:hover {
+  transform: translateY(-1px);
+}
+
+.quiz-option.correct {
+  background: #d9f5df;
+  border-color: #4caf50;
+  color: #176b27;
+}
+
+.quiz-option.wrong {
+  background: #fde0e0;
+  border-color: #e05252;
+  color: #a11b1b;
+}
+
+.quiz-feedback {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.quiz-feedback.correct-feedback {
+  display: block;
+  background: #e5f7e8;
+  color: #176b27;
+}
+
+.quiz-feedback.wrong-feedback {
+  display: block;
+  background: #fff0f0;
+  color: #a11b1b;
+}
+
+.quiz-section-title {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+</style>
+<div class="dialogue">
+
+  <div class="sentence mama">
+    <span class="speaker">Mama:</span>
+    Morgen ist der große Tag?
+  </div>
+
+  <div class="sentence tochter">
+    <span class="speaker">Tochter:</span>
+    Ja. Morgen um 9 Uhr unterschreiben Lars und ich den Kaufvertrag fürs Restaurant.
+  </div>
+
+  <div class="sentence mama">
+    <span class="speaker">Mama:</span>
+    Hoffentlich übernehmt ihr euch dann nicht. Zusammenziehen, Restaurant eröffnen, noch dazu so ein großes. Ihr kennt euch doch gerade mal ein Jahr.
+  </div>
+
+  <div class="sentence tochter">
+    <span class="speaker">Tochter:</span>
+    Mama, du machst dir viel zu viele Sorgen. Ich hab alles im Griff. Und ich will endlich was Eigenes machen. Ich will das kochen, was ich will, nicht was andere mir diktieren. Alles wird gut. Viel Spaß im Konzert.
+  </div>
+
+  <div class="sentence mama">
+    <span class="speaker">Mama:</span>
+    Ja, wenn wir da überhaupt noch hinkommen.
+  </div>
+
+  <div class="sentence mama">
+    <span class="speaker">Mama:</span>
+    piere, jetzt! Komm endlich!
+  </div>
+  <!-- فاصل بين النصوص -->
+<hr style="border: none; border-top: 2px dashed #aaa; margin: 30px 0;">
+
+</div>
+<div class="vocab-card" onclick="speakGerman('der große Tag')">
+  <div class="german-word">der große Tag</div>
+  <div class="english-meaning">the big day</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('unterschreiben')">
+  <div class="german-word">unterschreiben</div>
+  <div class="english-meaning">to sign</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('der Kaufvertrag')">
+  <div class="german-word">der Kaufvertrag</div>
+  <div class="english-meaning">the purchase contract</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('sich übernehmen')">
+  <div class="german-word">sich übernehmen</div>
+  <div class="english-meaning">to take on too much</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('zusammenziehen')">
+  <div class="german-word">zusammenziehen</div>
+  <div class="english-meaning">to move in together</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('eröffnen')">
+  <div class="german-word">eröffnen</div>
+  <div class="english-meaning">to open / launch</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('noch dazu')">
+  <div class="german-word">noch dazu</div>
+  <div class="english-meaning">on top of that</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('gerade mal')">
+  <div class="german-word">gerade mal</div>
+  <div class="english-meaning">only / just</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('sich Sorgen machen')">
+  <div class="german-word">sich Sorgen machen</div>
+  <div class="english-meaning">to worry</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('etwas im Griff haben')">
+  <div class="german-word">etwas im Griff haben</div>
+  <div class="english-meaning">to have something under control</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('etwas Eigenes')">
+  <div class="german-word">etwas Eigenes</div>
+  <div class="english-meaning">something of one's own</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('diktieren')">
+  <div class="german-word">diktieren</div>
+  <div class="english-meaning">to dictate / tell someone what to do</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('Alles wird gut')">
+  <div class="german-word">Alles wird gut</div>
+  <div class="english-meaning">Everything will be fine</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('Viel Spaß')">
+  <div class="german-word">Viel Spaß</div>
+  <div class="english-meaning">Have fun!</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('überhaupt')">
+  <div class="german-word">überhaupt</div>
+  <div class="english-meaning">at all</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('hinkommen')">
+  <div class="german-word">hinkommen</div>
+  <div class="english-meaning">to get there / make it there</div>
+</div>
+
+<div class="vocab-card" onclick="speakGerman('Komm endlich')">
+  <div class="german-word">Komm endlich!</div>
+  <div class="english-meaning">Come on already!</div>
+</div>
+  <!-- فاصل بين النصوص -->
+<hr style="border: none; border-top: 2px dashed #aaa; margin: 30px 0;">
+</div> <!-- إغلاق vocab-grid -->
+<div class="quiz-section">
+
+  <h2 class="quiz-title">📝 Quiz</h2>
+
+  <h3 class="quiz-section-title">Textverständnis</h3>
+  <!-- Frage 1 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    1. Was bedeutet „den Kaufvertrag unterschreiben“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Einen Vertrag offiziell mit seiner Unterschrift bestätigen.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Einen Vertrag mündlich besprechen.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Einen Vertrag sofort kündigen.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 2 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    2. Was bedeutet „sich übernehmen“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    a) Etwas vergessen.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    b) Mehr Aufgaben übernehmen, als man schaffen kann.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Etwas gemeinsam planen.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 3 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    3. Was bedeutet „sich Sorgen machen“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Angst oder Bedenken wegen etwas haben.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Sich über etwas freuen.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Etwas nicht ernst nehmen.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 4 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    4. Was bedeutet „etwas im Griff haben“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    a) Etwas verloren haben.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    b) Eine Situation gut kontrollieren können.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Etwas heimlich machen.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 5 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    5. Was bedeutet „etwas Eigenes machen“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Etwas machen, das einem selbst gehört oder selbstständig ist.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Etwas für andere kopieren.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Etwas gemeinsam mit anderen verkaufen.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 6 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    6. Was bedeutet „jemandem etwas diktieren“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    a) Jemandem erlauben, selbst zu entscheiden.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    b) Jemandem vorschreiben, was er tun soll.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Jemandem bei einer Aufgabe helfen.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 7 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    7. „Ihr kennt euch doch gerade mal ein Jahr.“ Was bedeutet „gerade mal“ hier?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    a) Genau und ohne Ausnahme.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    b) Erst seit kurzer Zeit.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Schon seit sehr langer Zeit.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 8 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    8. „Ich will endlich was Eigenes machen.“ Warum steht hier „was“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) „was“ ist eine umgangssprachliche Form von „etwas“.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) „was“ ist eine Kurzform von „warum“.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) „was“ ist eine Form von „wissen“.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 9 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    9. „Du machst dir viel zu viele Sorgen.“ Warum steht „dir“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) „sich Sorgen machen“ ist ein reflexiver Ausdruck mit Dativ.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) „dir“ steht hier im Akkusativ.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) „dir“ ersetzt das Subjekt.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 10 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    10. „Ich will das kochen, was ich will.“ Was bedeutet „was“ im zweiten Teil?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Es bezieht sich auf „das“ und leitet einen Relativsatz ein.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Es ist eine Frage nach einer Person.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Es bedeutet „warum“.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 11 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    11. „was ich will“ – Warum steht „will“ am Ende?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    a) Weil es ein Hauptsatz ist.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    b) Weil es ein Nebensatz ist und das konjugierte Verb am Ende steht.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Weil „will“ immer am Satzende steht.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 12 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    12. „Wenn wir da überhaupt noch hinkommen.“ Was drückt „wenn“ hier aus?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Eine Bedingung.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Einen Vergleich.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Eine Ursache.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 13 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    13. „wenn wir da überhaupt noch hinkommen“ – Was bedeutet „überhaupt“ hier?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    a) Vielleicht oder wahrscheinlich.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    b) Unter diesen Umständen überhaupt / tatsächlich.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Nur sehr schnell.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 14 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    14. Welche Form ist richtig?<br>
+    „Lars und ich ______ den Kaufvertrag.“
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) unterschreiben
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) unterschreibt
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) unterschreibst
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 15 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    15. Welche Form ist richtig?<br>
+    „Ihr ______ euch dann nicht.“
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) übernehmt
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) übernimmt
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) übernimmst
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 16 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    16. Welche Form ist richtig?<br>
+    „Du ______ dir viel zu viele Sorgen.“
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) machst
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) macht
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) machen
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 17 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    17. Welche Form ist richtig?<br>
+    „Ich ______ alles im Griff.“
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) habe
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) bin
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) mache
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 18 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    18. „Ich will endlich was Eigenes machen.“ Welche Funktion hat „machen“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Infinitiv nach „wollen“.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Präteritum.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Partizip II.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 19 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    19. „Ihr kennt euch doch gerade mal ein Jahr.“ Was bedeutet „euch“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Reflexives Pronomen im Plural.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Personalpronomen im Nominativ.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Possessivpronomen.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+
+
+<!-- Frage 20 -->
+<div class="quiz-box">
+  <div class="quiz-question">
+    20. Welche Aussage entspricht dem Satz „Alles wird gut“?
+  </div>
+
+  <button class="quiz-option" onclick="checkAnswer(this, true)">
+    a) Es wird wahrscheinlich alles in Ordnung kommen.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    b) Es ist bereits alles vorbei.
+  </button>
+
+  <button class="quiz-option" onclick="checkAnswer(this, false)">
+    c) Es wird alles schwieriger werden.
+  </button>
+
+  <div class="quiz-feedback"></div>
+</div>
+<script>
+function speakGerman(text) {
+  speechSynthesis.cancel();
+
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "de-DE";
+  speech.rate = 0.85;
+
+  speechSynthesis.speak(speech);
+}
+function checkAnswer(button, correct) {
+
+  const question = button.closest(".quiz-box");
+  const options = question.querySelectorAll(".quiz-option");
+  const feedback = question.querySelector(".quiz-feedback");
+
+  options.forEach(option => {
+    option.disabled = true;
+  });
+
+  if (correct) {
+
+    button.classList.add("correct");
+
+    feedback.textContent = "Richtig! ✅";
+    feedback.className = "quiz-feedback correct-feedback";
+
+  } else {
+
+    button.classList.add("wrong");
+
+    feedback.textContent = "Falsch! ❌ Versuch es noch einmal.";
+
+    feedback.className = "quiz-feedback wrong-feedback";
+
+    options.forEach(option => {
+      if (option.dataset.correct === "true") {
+        option.classList.add("correct");
+      }
+    });
+  }
+}
+</script>
+<div class="repeat-lesson">
+  <button onclick="location.reload()">
+    🔄 Lektion wiederholen
+  </button>
+</div>
+
+<style>
+.repeat-lesson {
+  text-align: center;
+  margin: 45px 0 25px;
+}
+
+.repeat-lesson button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.repeat-lesson button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+</style>
+   </body>  
+</html>  
